@@ -1,0 +1,170 @@
+
+:root{font-family:system-ui,'Segoe UI',sans-serif;--ref:url("../assets/images/ana-ekran.webp");--land:url("../assets/images/ada-manzarasi.webp")}*{box-sizing:border-box}body{margin:0;background:#075a96;color:#153e62}button{font:inherit;cursor:pointer;border:0;touch-action:manipulation}button:focus-visible{outline:4px solid #ffdd29}button:disabled{opacity:.5;cursor:not-allowed}.hidden{display:none!important}
+#home{min-height:100dvh;display:grid;place-items:center;background:linear-gradient(130deg,#0066ae,#40bfe5);padding:0}#stage{width:min(100vw,177.777dvh);aspect-ratio:16/9;position:relative;background-image:var(--ref);background-size:100% 100%;box-shadow:0 12px 45px #00284b88;overflow:hidden} .hot{position:absolute;background:transparent;border-radius:22px;transition:background .15s,transform .15s}.hot:hover,.hot:focus-visible{background:#fff3;transform:scale(1.025)}.hot:active{background:#ffeb7088}.hot.swipe{left:33%;top:40%;width:18%;height:35%}.hot.match{left:52%;top:40%;width:19%;height:17%}.hot.quiz{left:71%;top:40%;width:19%;height:17%}.hot.anagram{left:52%;top:57%;width:19%;height:18%}.hot.mole{left:71%;top:57%;width:19%;height:18%}.hot.book{left:45%;top:78%;width:13%;height:15%}.hot.progress{left:59%;top:78%;width:13%;height:15%}.hot.rewards{left:73%;top:78%;width:13%;height:15%}.hot.settings{left:89%;top:7%;width:8%;height:13%}.hot.profile{left:6%;top:9%;width:22%;height:13%}.overlay{position:absolute;color:#fff;font-weight:900;text-shadow:0 2px 4px #16375e;pointer-events:none}.overlay.clock{left:16%;bottom:9.7%;font-size:clamp(11px,2vw,26px)}.overlay.gems{right:21.3%;top:12%;font-size:clamp(9px,1.7vw,23px)}.overlay.keys{right:11.5%;top:12%;font-size:clamp(9px,1.7vw,23px)}
+#portrait{display:none}.screen{display:none;min-height:100dvh;background:linear-gradient(#80dbff,#e7fbef);padding:clamp(10px,2vw,24px);padding-bottom:32px}.screen.active{display:block}.panel{background:#fffdf4;border:4px solid #ffffff;border-radius:25px;max-width:800px;margin:0 auto;padding:clamp(16px,3vw,30px);box-shadow:0 10px 24px #0e6b9c42}.barhead{max-width:800px;margin:0 auto 12px;display:flex;align-items:center;justify-content:space-between;gap:12px}.back,.btn{padding:12px 18px;border-radius:16px;background:linear-gradient(#36baf9,#0875cc);color:white;font-weight:900;box-shadow:0 4px 0 #08558c}.btn.alt{background:linear-gradient(#8be757,#3ca72a);box-shadow:0 4px 0 #2c751e}.btn.warn{background:#e9b04c;box-shadow:0 4px 0 #a4751f}.btn:active,.back:active{transform:translateY(3px);box-shadow:none}.row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.center{text-align:center}.muted{color:#5e7182;font-size:13px}.pill{background:#e5f6ff;border-radius:100px;padding:8px 12px;font-weight:800}.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:18px 0}.word{font-size:clamp(29px,6vw,52px);font-weight:1000;text-align:center;margin:14px}.meaning{font-size:clamp(20px,3vw,27px);text-align:center}.emoji{text-align:center;font-size:clamp(65px,10vw,100px)}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}.choice{background:linear-gradient(#fefefe,#c8f0ff);border:3px solid #6db8ea;border-radius:17px;min-height:64px;padding:12px 6px;font-weight:900;color:#185080}.choice.correct{background:#b8efac}.choice.wrong{background:#ffd2d2}.progressbar{height:13px;background:#d4e4e9;border-radius:20px;overflow:hidden;margin:14px 0}.progressbar>div{height:100%;background:#52b943;width:0;transition:width .25s}.swcard{background:linear-gradient(#f6fcff,#e5f8e7);border:4px solid #c3e5fa;border-radius:24px;padding:16px;touch-action:pan-y}.puzzle{display:grid;grid-template-columns:repeat(3,1fr);aspect-ratio:3/2;max-width:600px;margin:18px auto;border:7px solid #f6d28a;border-radius:16px;overflow:hidden}.piece{background-image:var(--land);background-size:300% 200%;position:relative}.piece.locked:after{content:'🔒';position:absolute;inset:0;display:grid;place-items:center;background:#9cb9c8eb;font-size:clamp(22px,5vw,40px)}.piece.earned{animation:pop .55s ease-out}@keyframes pop{from{filter:brightness(2);transform:scale(.9)}to{filter:none;transform:scale(1)}}.notice{padding:12px;border-radius:15px;background:#e9f7de}.bookgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}.bookitem{background:#f0f9e7;border-radius:12px;padding:10px}.bookitem button{background:none;color:#067bb8;font-weight:800}
+@media(orientation:portrait),(max-aspect-ratio:1.25){#home{display:block;background:#74cfff}#stage{display:none}#portrait{display:flex;flex-direction:column;min-height:100dvh;background:linear-gradient(#64c6ff 0%,#94e7f8 52%,#54c59d 100%);padding:env(safe-area-inset-top) 12px env(safe-area-inset-bottom);gap:10px}.p-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.p-profile,.p-count{background:#084d9cd9;color:white;padding:9px 12px;border-radius:25px;font-weight:900;box-shadow:0 4px 0 #003d83}.p-hero{flex:1;min-height:160px;max-height:42dvh;position:relative;background-image:var(--land);background-size:cover;background-position:58% 42%;border-radius:24px;border:4px solid #ffffff88;overflow:hidden}.p-logo{position:absolute;left:5%;top:6%;font-weight:1000;font-size:clamp(24px,8vw,46px);color:#fff;text-shadow:3px 4px #0865a4,-2px -2px #0865a4}.p-logo span{color:#ffd21a}.p-time{position:absolute;bottom:8px;left:8px;background:#104f95dc;color:white;border-radius:12px;padding:8px 12px;font-weight:900}.p-menu{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.p-button{min-height:68px;border-radius:18px;color:white;font-weight:1000;font-size:clamp(15px,4.2vw,21px);text-shadow:0 2px 2px #0005;box-shadow:inset 0 2px 2px #fff9,0 5px 0 #08549b;border:3px solid #ffffff80}.p-button:active{transform:translateY(3px);box-shadow:none}.p-button.swipe{background:linear-gradient(#ffde1b,#ff880b);grid-row:span 2;font-size:clamp(19px,5vw,27px)}.p-button.match{background:linear-gradient(#64d2ff,#037edb)}.p-button.quiz{background:linear-gradient(#ff88c5,#e62281)}.p-button.anagram{background:linear-gradient(#d7a0ff,#7e32d6)}.p-button.mole{background:linear-gradient(#a9fa27,#4eaf05)}.p-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:8px 0}.p-nav button{background:#f7f1ed;border-radius:13px;padding:8px 3px;font-size:clamp(10px,2.8vw,14px);font-weight:900;color:#174a75}.p-nav span{display:block;font-size:23px}}
+@media(max-height:520px) and (orientation:landscape){.screen{padding:8px}.panel{padding:10px}.emoji{font-size:38px}.word{margin:5px}.choices{margin:6px 0}.choice{min-height:42px}.actions{margin:7px 0}}
+
+
+/* WOW Island V5 — shared visual language across all screens */
+:root{--deep:#07579c;--cyan:#1ba9ee;--gold:#ffc331;--leaf:#4bbf53}
+body{background:#47b9ef}
+.screen{min-height:100dvh;background:linear-gradient(180deg,#0575b84a,#003b6873),url('../assets/images/ada-manzarasi.webp') center center/cover fixed;padding:clamp(12px,2.5vw,30px);padding-bottom:45px;position:relative}
+.screen:before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 70%,#42db4b55,transparent 35%);z-index:0}
+.screen>*{position:relative;z-index:1}
+.barhead{max-width:1040px;gap:12px;margin-bottom:14px}
+.barhead:after{content:'🦉 WOW ISLAND';margin-left:auto;color:white;font-size:clamp(14px,2vw,23px);font-weight:1000;text-shadow:2px 3px 1px #0b578a}
+.barhead .pill{background:linear-gradient(#1c80d2,#094f9c);color:white;border:2px solid #8de4ff;box-shadow:0 5px 0 #053d77}
+.panel{max-width:1040px;background:linear-gradient(155deg,#fffbeaed,#fff3c5f2);border:5px solid #fff6d0;border-radius:30px;box-shadow:0 12px 0 #7b4b1e7d,0 25px 50px #043e5b66;overflow:hidden;position:relative}
+.panel:before{content:'';position:absolute;left:0;right:0;top:0;height:14px;background:repeating-linear-gradient(90deg,#a85d21 0 90px,#b46b29 90px 180px);opacity:.48}
+.panel h2{font-size:clamp(23px,4vw,40px);color:#074e88;text-shadow:1px 2px #fff;letter-spacing:-.4px;margin:12px 0}
+.panel h3{color:#095e7e;font-size:clamp(18px,2.8vw,27px)}
+.muted{color:#416276;font-weight:650;font-size:clamp(13px,1.5vw,16px)}
+.swcard{position:relative;background:linear-gradient(140deg,#fffdf9f5,#e3f7fff0);border:6px solid #ffca42;box-shadow:0 8px 0 #c58c18,0 16px 30px #145b7140;border-radius:32px;max-width:570px;margin:18px auto;min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.swcard:before{content:'⭐ WOW WORD ⭐';position:absolute;top:10px;left:50%;transform:translateX(-50%);white-space:nowrap;color:#f29b1d;font-weight:1000;font-size:12px;letter-spacing:2px}
+.swcard .emoji{filter:drop-shadow(0 6px 3px #3561a633)}
+.word{color:#074c94;text-shadow:1px 3px #fff;font-size:clamp(30px,5.5vw,58px)}
+.meaning{color:#237f55;font-weight:900}
+.choices{max-width:780px;margin:20px auto}
+.choice{background:linear-gradient(160deg,#ffffff,#c5eefe);border:4px solid #6ad6ff;box-shadow:0 5px 0 #1174af;font-size:clamp(16px,2vw,23px);color:#074f92;min-height:78px;transition:transform .12s}
+.choice:nth-child(2){background:linear-gradient(#fff1fa,#ffb4d8);border-color:#ff89c5;box-shadow:0 5px 0 #c33480}
+.choice:nth-child(3){background:linear-gradient(#f9f0ff,#d7b7ff);border-color:#bf8aff;box-shadow:0 5px 0 #7433bd}
+.choice:nth-child(4){background:linear-gradient(#f4ffda,#c7f67c);border-color:#a4e75a;box-shadow:0 5px 0 #4a9b28}
+.choice:active{transform:translateY(3px)}
+.choice.correct{background:linear-gradient(#d5ffc7,#7edb7c)!important;border-color:#35ae4d!important}
+.choice.wrong{background:linear-gradient(#ffe5e5,#ffadad)!important;border-color:#e45e5e!important}
+.btn,.back{border:3px solid #ffffffa9;border-radius:18px;box-shadow:0 5px 0 #07518b,0 9px 18px #002e6144;font-size:clamp(14px,1.7vw,19px)}
+.btn.alt{box-shadow:0 5px 0 #287a28,0 9px 18px #002e6144}
+#swWait{color:#085f8d;font-weight:900}
+#gameEmoji{filter:drop-shadow(0 5px 3px #3c7fa544)}
+.puzzle{box-shadow:0 9px 0 #a8792b,0 18px 28px #1b506844;border:8px solid #ffe397}
+.bookitem{background:linear-gradient(#fff,#dff5ff);border:3px solid #a2dfff;box-shadow:0 4px 0 #5bafcb;border-radius:18px;min-height:90px;display:grid;align-content:center;text-align:center}
+.bookitem button{font-size:19px;color:#08649e}
+.notice{background:linear-gradient(#f7ffdc,#d7f4b5);border:2px solid #9ad368;font-weight:800}
+#feedback{font-size:20px;font-weight:900;min-height:28px}
+#game .panel{min-height:440px}
+#swipe .panel{min-height:500px}
+@media (max-width:700px){.screen{background-attachment:scroll;background-position:55% center}.panel{border-width:3px;border-radius:22px;padding:15px}.barhead:after{font-size:12px}.swcard{min-height:230px}.choices{gap:9px}.choice{min-height:66px}.barhead .pill{font-size:12px}.panel:before{height:8px}}
+@media (orientation:landscape) and (max-height:550px){.screen{background-attachment:scroll}.swcard{min-height:150px;margin:6px auto}.swcard .emoji{font-size:45px}.swcard .word{font-size:28px;margin:3px}.swcard .meaning{font-size:18px}.panel{padding:12px}.panel h2{margin:4px 0;font-size:23px}#game .panel,#swipe .panel{min-height:unset}.choice{min-height:45px}.choices{margin:8px auto}}
+
+/* V6: four distinct game mechanics */
+.match-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.match-card{min-height:85px;border:3px solid #ffcf5a;border-radius:16px;background:linear-gradient(#fff3b7,#ffc15b);font-size:clamp(12px,1.6vw,19px);font-weight:900;color:#195275;overflow-wrap:anywhere;box-shadow:0 5px #b7822e}
+.match-card.revealed{background:linear-gradient(#f5ffff,#b6eaff)}
+.match-card.matched{background:#9be99b;color:#1a6b3b;opacity:.78;pointer-events:none}
+.anagram-area{display:flex;flex-direction:column;align-items:center;gap:15px}
+.letter-output{width:100%;min-height:60px;text-align:center;font-size:clamp(24px,5vw,42px);font-weight:1000;color:#0a568c;letter-spacing:.12em;background:#fff8d7;border:3px dashed #e3a02c;border-radius:16px;padding:12px;overflow-wrap:anywhere}
+.letter-tray{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+.letter-tile{width:clamp(42px,8vw,62px);height:clamp(50px,9vw,72px);border:3px solid #ffffff;border-radius:14px;background:linear-gradient(#e8baff,#9858e9);box-shadow:0 5px #5f2b99;color:white;font-size:clamp(23px,4vw,34px);font-weight:1000}
+.letter-tile:disabled{opacity:.2}.letter-controls{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.mole-grid{grid-template-columns:repeat(3,minmax(0,1fr));max-width:680px;gap:10px}
+.mole-hole{min-height:clamp(68px,13vw,105px);background:radial-gradient(ellipse at 50% 75%,#50311c 0 45%,#8c5b36 47%,#6cbf4a 72%);border:5px solid #b5ec7b;border-radius:50% 50% 35% 35%;font-size:clamp(13px,2vw,23px);color:#fff;font-weight:1000;text-shadow:0 2px 3px #000;box-shadow:0 5px #477b32}
+.mole-hole.up{background:linear-gradient(#b6f47a,#4baf3c);color:#174a24;text-shadow:none;animation:moleRise .2s ease-out}
+@keyframes moleRise{from{transform:scale(.75)}to{transform:scale(1)}}
+@media(max-width:650px){.match-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.match-card{min-height:55px}.mole-hole{min-height:65px}.letter-output{min-height:50px}}
+
+/* V7: hit areas follow the actual button artwork in the 1648×928 reference image. */
+#stage .hot{border-radius:12%;outline-offset:2px}
+#stage .hot.swipe{left:31.5%;top:38.3%;width:19.5%;height:37.5%}
+#stage .hot.match{left:52.2%;top:38.6%;width:21%;height:17.7%}
+#stage .hot.quiz{left:73.7%;top:38.6%;width:21.3%;height:17.7%}
+#stage .hot.anagram{left:52.2%;top:57.4%;width:21%;height:18.1%}
+#stage .hot.mole{left:73.7%;top:57.4%;width:21.3%;height:18.1%}
+#stage .hot.book{left:44.1%;top:81.1%;width:14.8%;height:15.2%}
+#stage .hot.progress{left:59%;top:81.1%;width:14.8%;height:15.2%}
+#stage .hot.rewards{left:74%;top:81.1%;width:17%;height:15.2%}
+#stage .hot.settings{left:92.1%;top:3.8%;width:6.7%;height:11.3%}
+#stage .hot.profile{left:2.8%;top:4.4%;width:21%;height:15.4%}
+/* Single live timer replaces, rather than floats above, the painted 20:00. */
+#stage .overlay.clock{left:11.1%;top:85.7%;bottom:auto;width:8.5%;height:4.8%;display:flex;align-items:center;justify-content:center;background:#1c4b80;border-radius:7px;font-size:clamp(10px,2.15vw,31px);line-height:1;text-shadow:0 2px 2px #0b3159}
+#stage .overlay.gems,#stage .overlay.keys{display:none}
+
+/* V8: island scene remains the visual environment across every activity. */
+.screen{background:linear-gradient(120deg,#00548255,#003c5d44),url('../assets/images/ada-manzarasi.webp') center center/cover no-repeat fixed!important}
+.screen:before{background:linear-gradient(120deg,#0e83b622,#4abf6533)!important}
+.panel{background:linear-gradient(135deg,#fffce4dd,#d6f8e7dd)!important;backdrop-filter:blur(9px) saturate(1.2);border:5px solid #ffe3a3;box-shadow:0 9px 0 #7c4b1d99,0 24px 45px #003e6388}
+.panel:after{content:'🌿';position:absolute;right:8px;top:0;font-size:30px;pointer-events:none}
+#swipe .swcard{background:linear-gradient(145deg,#fff9d9e8,#b9f3f4df),url('../assets/images/ada-manzarasi.webp') center/cover;border-color:#ffb42d;box-shadow:0 9px 0 #a96a15,0 20px 35px #12587877}
+#game .panel{background:linear-gradient(130deg,#fff7d5e1,#d7f5ffdd)!important}
+#progress .panel,#book .panel{background:linear-gradient(135deg,#fff4d6e3,#c8f6e4e3)!important}
+.match-card{background:linear-gradient(#ffe2a5,#f9a33c);border-color:#fff3c9}
+.mole-hole{box-shadow:0 6px #467c32,0 12px 15px #003b4a66}
+#gameEmoji{font-size:clamp(30px,6vw,62px);overflow-wrap:anywhere}
+@media(max-width:700px){.screen{background-attachment:scroll!important;background-position:60% center!important}.panel{backdrop-filter:blur(5px);border-width:3px}.barhead:after{display:none}}
+
+/* V9 portrait: island-first, cheerful owl and glossy raised controls */
+@media (orientation:portrait),(max-aspect-ratio:1.25){
+ #home{background:#1aa9dc}
+ #portrait{position:relative;isolation:isolate;min-height:100dvh;padding:calc(env(safe-area-inset-top) + 12px) clamp(10px,3vw,20px) calc(env(safe-area-inset-bottom) + 12px);gap:clamp(9px,1.7dvh,18px);background:linear-gradient(180deg,#0a6caa22 0%,#0b86c255 60%,#074b83b0 100%),url('../assets/images/ada-manzarasi.webp') center center/cover no-repeat}
+ #portrait:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 18% 39%,#e5ffbf55,transparent 45%)}
+ .p-top{z-index:2}.p-profile,.p-count{border:2px solid #8fe6ff;box-shadow:0 4px 0 #003e80,0 6px 14px #003e8070;font-size:clamp(12px,3.3vw,17px)}
+ .p-hero{flex:1 1 auto;min-height:clamp(180px,30dvh,340px);max-height:42dvh;border:0;box-shadow:none;border-radius:24px;background:transparent;overflow:visible}
+ .p-hero:before{content:'';position:absolute;bottom:-5%;left:-2%;height:100%;width:56%;background:url('../assets/images/baykus.png') center bottom/contain no-repeat;filter:drop-shadow(0 7px 7px #003d6988);pointer-events:none}
+ .p-logo{left:auto;right:0;top:5%;width:58%;text-align:center;padding:9px 5px;background:linear-gradient(160deg,#b56a27,#eeb65a 45%,#a7591c);border:4px solid #fff4bd;border-radius:25px;box-shadow:0 6px 0 #7a4017,0 10px 20px #00385870;font-size:clamp(19px,5.5vw,37px);line-height:1.05;transform:rotate(-2deg)}
+ .p-logo span{display:block;font-size:1.5em;color:#ffe43d;text-shadow:2px 3px #a9520b,-1px -1px #fff}
+ .p-time{left:auto;right:2%;bottom:5%;font-size:clamp(13px,3.5vw,18px);background:linear-gradient(#168cdd,#064a98);border:3px solid #a5eaff;box-shadow:0 5px 0 #003e80;border-radius:19px;padding:9px 14px}
+ .p-menu{z-index:1;gap:clamp(8px,1.2dvh,14px)}
+ .p-button{min-height:clamp(68px,11dvh,112px);border:3px solid #fff6c9;box-shadow:inset 0 3px 1px #fff9,0 6px 0 #094b88,0 9px 13px #00365c90;border-radius:24px;font-size:clamp(14px,4.2vw,21px);padding:8px 4px}
+ .p-button.swipe{font-size:clamp(20px,6vw,30px);box-shadow:inset 0 3px 2px #fff9,0 6px 0 #bb5000,0 9px 14px #00365c90}
+ .p-nav{z-index:1;gap:7px;margin:4px 0 0}
+ .p-nav button{min-height:clamp(59px,9dvh,80px);border:2px solid #fff7d5;border-radius:17px;background:linear-gradient(#fff9f4,#f0d6c3);box-shadow:0 5px 0 #836b68,0 8px 12px #003c6580;color:#174c79;font-size:clamp(10px,2.8vw,14px);padding:5px 2px}
+ .p-nav span{font-size:clamp(21px,5vw,29px)}
+}
+@media (orientation:portrait) and (max-height:680px){.p-hero{min-height:125px;max-height:26dvh}.p-button{min-height:54px}.p-nav button{min-height:48px}.p-nav span{font-size:19px}}
+/* V9 line-matching board: two fixed visible word columns, with SVG curves in between */
+.connect-area{display:block!important;margin:14px auto!important;max-width:850px}
+.connect-board{display:grid;grid-template-columns:minmax(0,1fr) minmax(55px,17%) minmax(0,1fr);position:relative;gap:0;align-items:stretch;min-height:385px}
+.connect-column{display:grid;grid-template-rows:repeat(5,minmax(64px,1fr));gap:9px;z-index:1}
+#connectLeft{grid-column:1}#connectRight{grid-column:3}
+.connect-lines{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible;pointer-events:none}
+.connect-word{padding:9px 5px;border:3px solid #fff9da;border-radius:17px;color:#fff;font-weight:900;font-size:clamp(13px,2.2vw,19px);text-shadow:0 1px 2px #083d70;box-shadow:0 5px 0 #095c9a,0 7px 10px #003b5a55;background:linear-gradient(#40c9ff,#087dcc);overflow-wrap:anywhere}
+#connectRight .connect-word{background:linear-gradient(#ffcb64,#ef7b22);box-shadow:0 5px 0 #9b4e16,0 7px 10px #003b5a55}
+.connect-word.selected{outline:5px solid #ffef51;outline-offset:1px;transform:scale(1.02)}
+.connect-word.matched,#connectRight .connect-word.matched{background:linear-gradient(#83e75d,#2eab4c);box-shadow:0 4px 0 #19713a;color:#114d2b;text-shadow:none}
+.connect-word.wrong{outline:3px solid #ff5757}
+@media(max-width:650px){.connect-board{grid-template-columns:minmax(0,1fr) 16% minmax(0,1fr);min-height:340px}.connect-column{grid-template-rows:repeat(5,minmax(58px,1fr));gap:8px}.connect-word{font-size:clamp(11px,3.2vw,16px);padding:6px 3px;border-radius:13px;border-width:2px}}
+@media (prefers-reduced-motion:reduce){.connect-word,.p-button{transition:none!important}}
+
+/* V10: canlı profil; arka plandaki basılı Ali yazısını tamamen kapatır. */
+#stage .profile-live{position:absolute;left:2.6%;top:4.4%;width:22.5%;height:16.5%;z-index:10;display:flex;align-items:center;gap:5%;padding:1% 1.4%;border:3px solid #b7f4ff;border-radius:999px;background:linear-gradient(145deg,#0b75c8,#063975);box-shadow:0 5px 12px #012f60aa,inset 0 2px 6px #ffffff80;color:#fff;text-align:left;overflow:hidden}
+.profile-live .avatar-icon{flex:0 0 30%;aspect-ratio:1;display:grid;place-items:center;background:linear-gradient(#e9f9ff,#80d5fd);border:3px solid white;border-radius:50%;font-size:clamp(20px,3.5vw,58px);text-shadow:none}
+.profile-lines{display:flex;flex-direction:column;gap:2px;min-width:0}.profile-lines strong{font-size:clamp(10px,1.4vw,22px);line-height:1.1}.profile-lines small{font-size:clamp(10px,1.2vw,19px);font-weight:900}.edit-avatar{position:absolute;right:4%;top:9%;font-size:clamp(10px,1vw,17px)}
+.p-profile.profile-live-portrait{display:flex;align-items:center;gap:8px;border:2px solid #9ceaff;min-width:0;text-align:left;cursor:pointer}.profile-live-portrait #avatarPortrait{font-size:clamp(26px,7vw,40px)}.profile-live-portrait strong{display:block;font-size:clamp(11px,3vw,15px)}.profile-live-portrait small{display:block;font-size:clamp(10px,2.7vw,14px)}
+.avatar-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px auto;max-width:460px}.avatar-option{font-size:clamp(30px,6vw,48px);border:3px solid #87d4f1;border-radius:18px;background:linear-gradient(#ffffff,#bceaff);padding:12px 2px;box-shadow:0 5px 0 #4b9db7}.avatar-option.selected{border-color:#ffb400;background:#fff0a1;box-shadow:0 5px 0 #d68a00}.avatar-option:focus-visible{outline:4px solid #ffcf00}
+@media(orientation:portrait),(max-aspect-ratio:1.25){.p-profile.profile-live-portrait{padding:6px 8px;box-shadow:0 4px 0 #003d83}.p-top{position:relative;z-index:2}}
+
+/* V11: ilk açılış öğrenci adı */
+.welcome-overlay[hidden]{display:none!important}
+.welcome-overlay{position:fixed;inset:0;z-index:9999;background:linear-gradient(130deg,#003b68dc,#167fa3d9),url('../assets/images/ada-manzarasi.webp') center/cover;display:grid;place-items:center;padding:18px;overflow:auto}
+.welcome-card{width:min(480px,100%);background:linear-gradient(#fff7d6,#fff0c1);border:5px solid #fff;border-radius:28px;box-shadow:0 14px 0 #095e8b,0 22px 40px #002e5c9c;padding:clamp(18px,4vw,35px);display:grid;gap:12px;text-align:center;color:#175375}
+.welcome-card h2{margin:0;color:#006cb5}.welcome-owl{font-size:68px}.welcome-card label{text-align:left;font-weight:900}.welcome-card input{width:100%;box-sizing:border-box;border:3px solid #2babe1;border-radius:14px;font-size:20px;padding:12px;background:white;color:#16466a}.welcome-warning{font-size:13px;color:#874d27}.welcome-card button{cursor:pointer}.student-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* V12: Same real WOW artwork on portrait and landscape; images are separate assets. */
+@media (orientation:portrait),(max-aspect-ratio:1.25){
+ #portrait{background:linear-gradient(180deg,#004a7738,#004a7759),url('../assets/images/ada-manzarasi.webp') center / cover no-repeat;overflow-x:hidden}
+ .p-hero{flex:1 1 auto;min-height:clamp(140px,27dvh,350px);max-height:39dvh}
+ .p-logo{display:none!important}
+ .p-logo-img{position:absolute;right:0;top:0;width:min(67%,410px);height:auto;max-height:88%;object-fit:contain;filter:drop-shadow(0 6px 6px #00456777);border-radius:18px}
+ .p-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(7px,1.1dvh,14px);align-items:stretch}
+ .p-button.image-button{padding:0!important;min-height:clamp(75px,11dvh,125px);height:auto;overflow:hidden;border:0!important;background:none!important;box-shadow:0 5px 0 #06446c,0 9px 13px #00365c70!important;border-radius:clamp(14px,4vw,25px);display:flex;align-items:stretch;justify-content:stretch;transition:transform .1s}
+ .p-button.image-button img{display:block;width:100%;height:100%;min-height:inherit;object-fit:fill;border-radius:inherit;pointer-events:none}
+ .p-button.swipe.image-button{grid-row:span 2;min-height:clamp(160px,23dvh,260px)}
+ .p-button.image-button:active{transform:translateY(3px)}
+ .p-nav{margin-top:5px}
+}
+@media (orientation:portrait) and (max-height:650px){
+ .p-hero{min-height:100px;max-height:24dvh}
+ .p-button.image-button{min-height:62px}
+ .p-button.swipe.image-button{min-height:130px}
+ .p-nav button{min-height:44px}
+}
+
+/* V13: puzzle kutlaması ve ayrı oyun/kelime raporları */
+.wow-celebrate{position:fixed;inset:0;z-index:10050;background:linear-gradient(135deg,#005c9ded,#008c91e8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;color:#fff;overflow:hidden}
+.wow-celebrate-image{width:min(72vw,340px);aspect-ratio:3/2;background:url('../assets/images/ada-manzarasi.webp') center/cover;border:7px solid #ffe66e;border-radius:24px;box-shadow:0 12px 0 #00526a,0 22px 50px #001c4380;animation:wowPop .65s cubic-bezier(.2,1.4,.4,1)}
+.wow-celebrate h2{font-size:clamp(22px,5vw,35px);margin:8px 0 0;text-shadow:0 3px 0 #004c75}.wow-celebrate p{font-size:clamp(16px,3vw,21px);margin:0}.wow-celebrate-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;z-index:2}
+.wow-spark{position:absolute;left:var(--x);top:-10%;font-size:clamp(20px,4vw,40px);pointer-events:none;animation:wowFall 2.8s var(--delay) ease-in forwards}
+@keyframes wowPop{from{transform:scale(.35) rotate(-12deg);opacity:0}to{transform:scale(1) rotate(0);opacity:1}}
+@keyframes wowFall{from{transform:translateY(-10vh) rotate(0);opacity:1}to{transform:translateY(125vh) rotate(420deg);opacity:0}}
+.word-stat-game{margin:10px 0;padding:12px;border-radius:16px;background:#fff7d5ee;border:2px solid #ffdb77;color:#22566b}.word-stat-game summary{cursor:pointer;font-weight:800}.word-stat-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:clamp(12px,2.8vw,15px)}.word-stat-table th,.word-stat-table td{border-bottom:1px solid #c7d9d4;padding:6px 4px;text-align:left}.word-stat-table th{color:#065e87}
+@media(prefers-reduced-motion:reduce){.wow-celebrate-image,.wow-spark{animation:none}}
