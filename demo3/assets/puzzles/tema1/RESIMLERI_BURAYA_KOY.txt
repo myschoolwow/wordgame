@@ -1,0 +1,1 @@
+Bu klasöre hafta1.webp, hafta2.webp, hafta3.webp, hafta4.webp dosyalarını yerleştirin. Önerilen oran 3:2, boyut 1200x800. Resim yoksa mevsimlik varsayılan resim gösterilir.
