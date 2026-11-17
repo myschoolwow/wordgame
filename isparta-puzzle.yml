@@ -10,7 +10,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install Pillow
-      - run: python indir_ve_hazirla.py
+      - run: python preparepuzzlefoto/indir_ve_hazirla.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
