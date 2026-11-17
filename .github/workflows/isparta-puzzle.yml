@@ -1,3 +1,31 @@
-.github/
-    workflows/
-        isparta-puzzle.yml
+
+name: Isparta 24 puzzle fotografini hazirla
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fotograf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Kutuphaneleri yukle
+        run: pip install Pillow
+
+      - name: Fotograflari hazirla
+        run: python indir_ve_hazirla.py
+
+      - name: Fotograflari ZIP olarak sun
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Isparta-puzzle-fotograflari
+          path: |
+            assets/puzzles/
+            FOTOGRAF_KAYNAKLARI.csv
+            HATALAR.json
