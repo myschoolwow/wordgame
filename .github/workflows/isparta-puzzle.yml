@@ -1,5 +1,5 @@
 
-name: Isparta 24 puzzle fotografini hazirla
+name: Isparta Puzzle Fotograflari
 
 on:
   workflow_dispatch:
