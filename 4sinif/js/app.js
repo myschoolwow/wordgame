@@ -307,7 +307,7 @@ async function sharePuzzle(){
   x.fillText('MySchool WOW • 4. Sınıf',600,38,1160);
   x.font='bold 26px sans-serif';x.fillText(themeName()+' • '+(week+1)+'. Hafta',600,76,1160);
   const blob=await puzzlePNG(c);
-  const filename=`MySchool_WOW_3_Sinif_Tema_${themeId()}_Hafta_${week+1}.png`;
+  const filename=`MySchool_WOW_4_Sinif_Tema_${themeId()}_Hafta_${week+1}.png`;
   const file=new File([blob],filename,{type:'image/png'});
   const data={files:[file],title:'MySchool WOW — Başarım',text:`${studentName()||'Öğrenci'} • 4. Sınıf • ${themeName()} • ${week+1}. Hafta`};
   if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
