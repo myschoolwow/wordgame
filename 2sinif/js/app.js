@@ -1,14 +1,14 @@
 
 'use strict';
 
-const KEY='wow3_island_reference_v8';
-const THEME_PREFIX='wow3_theme_v16_';const MEDAL_KEY='wow3_medals_v16';const $=id=>document.getElementById(id);
+const KEY='wow2_island_reference_v8';
+const THEME_PREFIX='wow2_theme_v16_';const MEDAL_KEY='wow2_medals_v16';const $=id=>document.getElementById(id);
 const localDay=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
 function dayNum(s){return Math.floor(new Date(s+'T12:00:00').getTime()/86400000)}
 function monday(s){const d=new Date(s+'T12:00:00'),wd=(d.getDay()+6)%7;d.setDate(d.getDate()-wd);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
 function weekId(){return monday(localDay())}
 const WORDS=window.WOW_THEME_1;
-const THEMES=Object.fromEntries([1,2,3,4,5,6].map(i=>[String(i),{name:["School Life", "Classroom Life", "Personal Life", "Family Life", "Homes, Houses & the Neighbourhood", "Life in the City & the World"][i-1],words:window['WOW_THEME_'+i]}]));
+const THEMES=Object.fromEntries([1,2,3,4,5,6].map(i=>[String(i),{name:["School Life", "Classroom Life", "Personal Life", "Family Life", "Homes & Houses & Neighbourhoods", "Life in the City & the World"][i-1],words:window['WOW_THEME_'+i]}]));
 function themeAvailable(id){const n=Number(id);return n<=2||(n>=3&&n<=6&&Boolean(medals()[String(n-1)]))}
 
 let state={},legacy={};
@@ -20,9 +20,9 @@ function themeWords(){return THEMES[themeId()]?.words||[]}
 let theme={};
 function loadTheme(){try{theme=JSON.parse(localStorage.getItem(THEME_PREFIX+themeId()))||emptyTheme()}catch{theme=emptyTheme()};theme.wordStats??={};theme.puzzles??=[[],[],[],[]];theme.awarded??={};theme.swipe??={};theme.stats??={total:0,correct:0};theme.gameStats??={};theme.demoWeek??=0;
 // V14 legacy records are migrated once into Tema 1; original key remains intact for rollback.
-if(themeId()==='1'&&!localStorage.getItem(THEME_PREFIX+'1')&&!localStorage.getItem('wow3_migrated_v16')&&legacy.wordStats){for(const data of Object.values(legacy.wordStats)){for(const [name,v] of Object.entries(data)){const idx=WORDS.findIndex(w=>w[0]===name);if(idx<0)continue;const x=theme.wordStats[idx]??={c:0,w:0,r:'',d:0};x.c+=v.correct||0;x.w+=(v.total||0)-(v.correct||0)}}}
+if(themeId()==='1'&&!localStorage.getItem(THEME_PREFIX+'1')&&!localStorage.getItem('wow2_migrated_v16')&&legacy.wordStats){for(const data of Object.values(legacy.wordStats)){for(const [name,v] of Object.entries(data)){const idx=WORDS.findIndex(w=>w[0]===name);if(idx<0)continue;const x=theme.wordStats[idx]??={c:0,w:0,r:'',d:0};x.c+=v.correct||0;x.w+=(v.total||0)-(v.correct||0)}}}
 }
-function save(){try{localStorage.setItem('wow3_migrated_v16','1');localStorage.setItem(KEY,JSON.stringify({activeTheme:themeId(),avatar:state.avatar,usage:state.usage}));if(!medals()[themeId()])localStorage.setItem(THEME_PREFIX+themeId(),JSON.stringify(theme))}catch(e){console.warn('Kaydetme başarısız',e)}}
+function save(){try{localStorage.setItem('wow2_migrated_v16','1');localStorage.setItem(KEY,JSON.stringify({activeTheme:themeId(),avatar:state.avatar,usage:state.usage}));if(!medals()[themeId()])localStorage.setItem(THEME_PREFIX+themeId(),JSON.stringify(theme))}catch(e){console.warn('Kaydetme başarısız',e)}}
 function medals(){try{return JSON.parse(localStorage.getItem(MEDAL_KEY))||{}}catch{return {}}}
 function changeTheme(value){if(!THEMES[value]||!themeAvailable(value)){alert('Bu tema kilitli. Önce bir önceki temanın altın madalyasını kazanmalısın.');$('themeSelect').value=themeId();return}save();state.activeTheme=value;loadTheme();dailyWords.cacheKey=null;save();updateThemeLabels();openScreen('home')}
 function updateThemeLabels(){document.querySelectorAll('.theme-wide-shortcut,.p-theme-shortcut').forEach(e=>e.textContent=themeName());if($('themeSelect')){const sel=$('themeSelect');for(const opt of sel.options){const open=themeAvailable(opt.value);opt.disabled=!open;opt.textContent='Tema '+opt.value+' — '+THEMES[opt.value].name+(open?'':' 🔒')}sel.value=themeId()};if($('bookThemeLabel'))$('bookThemeLabel').textContent=themeName();if($('puzzleThemeLabel'))$('puzzleThemeLabel').textContent=themeName()}
@@ -41,7 +41,7 @@ function refreshPuzzleTheme(){
  const stamp=document.querySelector('.puzzle-stamp');if(stamp)stamp.classList.toggle('completed',pieces(w).length===6||Boolean(medals()[themeId()]));
 }
 
-const LIMIT=1200;let screen='home',gameType='',q=null,roundCorrect=0,roundTotal=0,answerLocked=false,swShown=0,swInterval=null,gameTick=performance.now();let tabOwner=true;const channel=typeof BroadcastChannel!=='undefined'?new BroadcastChannel('wow3_game_clock'):null;let tabId=Math.random().toString(36).slice(2);if(channel){channel.onmessage=e=>{if(e.data?.type==='playing'&&e.data.id!==tabId&&screen==='game'){tabOwner=false;openScreen('home');alert('Oyun başka bir sekmede açık. Bu sekmedeki oyun durduruldu.')}}}
+const LIMIT=1200;let screen='home',gameType='',q=null,roundCorrect=0,roundTotal=0,answerLocked=false,swShown=0,swInterval=null,gameTick=performance.now();let tabOwner=true;const channel=typeof BroadcastChannel!=='undefined'?new BroadcastChannel('wow2_game_clock'):null;let tabId=Math.random().toString(36).slice(2);if(channel){channel.onmessage=e=>{if(e.data?.type==='playing'&&e.data.id!==tabId&&screen==='game'){tabOwner=false;openScreen('home');alert('Oyun başka bir sekmede açık. Bu sekmedeki oyun durduruldu.')}}}
 function usage(){return state.usage[localDay()]||0}function remaining(){return Math.max(0,LIMIT-usage())}
 function actualWeek(){return Math.min(3,Math.max(0,Math.floor((dayNum(localDay())-dayNum(theme.start))/7)))}
 function currentWeek(){return Math.min(3,actualWeek()+Math.max(0,theme.demoWeek||0))}
@@ -79,7 +79,7 @@ function dailyWords(){
  selected=[...shuffle(news).slice(0,10),...reviewWords(5,old)];
  selected=[...new Set([...selected,...shuffle(old),...shuffle(news)])].slice(0,15);}
  if(!selected.length)selected=all.slice(0,15);
- const storeKey='wow3_daily_v18_'+cacheKey;try{const saved=JSON.parse(localStorage.getItem(storeKey)||'null');if(Array.isArray(saved)&&saved.length){const found=saved.map(n=>themeWords()[n]).filter(Boolean);if(found.length===saved.length)selected=found}else{localStorage.setItem(storeKey,JSON.stringify(selected.map(w=>themeWords().indexOf(w))))}}catch(e){console.warn(e)}dailyWords.cacheKey=cacheKey;dailyWords.cache=selected;return selected;
+ const storeKey='wow2_daily_v18_'+cacheKey;try{const saved=JSON.parse(localStorage.getItem(storeKey)||'null');if(Array.isArray(saved)&&saved.length){const found=saved.map(n=>themeWords()[n]).filter(Boolean);if(found.length===saved.length)selected=found}else{localStorage.setItem(storeKey,JSON.stringify(selected.map(w=>themeWords().indexOf(w))))}}catch(e){console.warn(e)}dailyWords.cacheKey=cacheKey;dailyWords.cache=selected;return selected;
 }
 function swState(){const d=localDay();return theme.swipe[d]??(theme.swipe[d]={index:0})}
 function renderSwipe(fresh){const s=swState(),list=dailyWords(),w=list[s.index%list.length];if(!w)return;$('swEmoji').textContent=w[2]||'';$('swEmoji').hidden=!w[2];$('swWord').textContent=w[0];$('swTr').textContent=w[1];if(fresh){swShown=Date.now();$('swNext').disabled=true;speak();clearInterval(swInterval);swInterval=setInterval(()=>{if(screen!=='swipe'){clearInterval(swInterval);return}const left=3000-(Date.now()-swShown);$('swNext').disabled=left>0;if(left<=0)clearInterval(swInterval)},120)}}
@@ -232,21 +232,61 @@ function renderLetters(){
  tray.innerHTML='';d.letters.forEach(item=>{let used=d.picked.includes(item.id);let b=makeButton(tray,item.ch,()=>{if(answerLocked||used)return;d.picked.push(item.id);renderLetters()},'letter-tile');b.disabled=used});
 }
 // MOLE V9: gentler pace, 2.2 seconds visible, 15 seconds total.
+
 function drawMole(){
- q=rand(dailyWords());gameData={target:Math.floor(Math.random()*9),roundStarted:performance.now(),resolved:false,turn:0,sequence:[]};
- $('choices').className='choices mole-grid';$('gameEmoji').textContent='🐹';$('question').textContent=`${q[1]} kelimesini yakala!`;
- $('hint').textContent='Köstebekler 2,2 saniye görünür. Doğru İngilizce kelimeyi 15 saniye içinde yakala.';
- const wrong=shuffle(pool().filter(w=>w!==q)).slice(0,5);gameData.sequence=shuffle([q,q,q,...wrong]);
- const holes=Array.from({length:9},(_,i)=>makeButton($('choices'),'🕳️',()=>hitMole(i),'mole-hole'));
- function move(){if(!gameRunning||gameType!=='mole'||gameData.resolved)return;
-  const now=performance.now();if(now-gameData.roundStarted>=15000){finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0]);return}
-  const pos=gameData.target;
-  holes.forEach(h=>{h.textContent='🕳️';h.classList.remove('up');h.dataset.word=''});
-  const turn=gameData.turn++;const choice=gameData.sequence[turn%gameData.sequence.length];
-  holes[pos].textContent='🐹 '+choice[0];holes[pos].classList.add('up');holes[pos].dataset.word=choice[0];
-  gameData.target=(pos+1+Math.floor(Math.random()*8))%9;
-  later(move,2200);
+ q=rand(dailyWords());
+ gameData={target:Math.floor(Math.random()*9),roundStarted:performance.now(),resolved:false,turn:0,sequence:[]};
+
+ $('choices').className='choices mole-grid';
+ $('gameEmoji').textContent='🐹';
+ $('question').textContent=`${q[1]} kelimesini yakala!`;
+ $('hint').textContent='Üç kelime iki tur gösterilir. Doğru İngilizce kelimeyi 6 saniye içinde yakala.';
+
+ const wrong=shuffle(pool().filter(w=>w[0]!==q[0]));
+ const distinctWrong=[...new Map(wrong.map(w=>[w[0],w])).values()].slice(0,2);
+ if(distinctWrong.length<2){
+  $('feedback').textContent='Bu oyun için en az üç farklı kelime gerekiyor.';
+  later(nextQuestion,750);
+  return;
  }
+
+ const options=[q,...distinctWrong];
+ gameData.sequence=[...shuffle(options),...shuffle(options)];
+
+ const holes=Array.from({length:9},(_,i)=>
+  makeButton($('choices'),'🕳️',()=>hitMole(i),'mole-hole')
+ );
+
+ function move(){
+  if(!gameRunning||gameType!=='mole'||gameData.resolved)return;
+  if(gameData.turn>=6)return;
+
+  const pos=gameData.target;
+  holes.forEach(h=>{
+   h.textContent='🕳️';
+   h.classList.remove('up');
+   h.dataset.word='';
+  });
+
+  const choice=gameData.sequence[gameData.turn++];
+  holes[pos].textContent='🐹 '+choice[0];
+  holes[pos].classList.add('up');
+  holes[pos].dataset.word=choice[0];
+
+  gameData.target=(pos+1+Math.floor(Math.random()*8))%9;
+  if(gameData.turn<6)later(move,1000);
+ }
+
+ gameData.holes=holes;
+ gameData.correctWord=q[0];
+ move();
+
+ later(()=>{
+  if(!gameData.resolved)
+   finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0]);
+ },6000);
+ }
+
  gameData.holes=holes;gameData.correctWord=q[0];move();later(()=>{if(!gameData.resolved)finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0])},15000);
 }
 function hitMole(i){
@@ -304,12 +344,12 @@ async function sharePuzzle(){
   x.fillText(studentName()||'Öğrenci',600,400,1100);x.restore();
   x.fillStyle='rgba(8,63,123,.92)';x.fillRect(0,0,1200,100);
   x.fillStyle='white';x.textAlign='center';x.font='bold 27px sans-serif';
-  x.fillText('MySchool WOW • 3. Sınıf',600,38,1160);
+  x.fillText('MySchool WOW • 2. Sınıf',600,38,1160);
   x.font='bold 26px sans-serif';x.fillText(themeName()+' • '+(week+1)+'. Hafta',600,76,1160);
   const blob=await puzzlePNG(c);
-  const filename=`MySchool_WOW_3_Sinif_Tema_${themeId()}_Hafta_${week+1}.png`;
+  const filename=`MySchool_WOW_2_Sinif_Tema_${themeId()}_Hafta_${week+1}.png`;
   const file=new File([blob],filename,{type:'image/png'});
-  const data={files:[file],title:'MySchool WOW — Başarım',text:`${studentName()||'Öğrenci'} • 3. Sınıf • ${themeName()} • ${week+1}. Hafta`};
+  const data={files:[file],title:'MySchool WOW — Başarım',text:`${studentName()||'Öğrenci'} • 2. Sınıf • ${themeName()} • ${week+1}. Hafta`};
   if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
    try{await navigator.share(data);return;}
    catch(err){if(err&&err.name==='AbortError')return;}
@@ -326,12 +366,12 @@ function renderBook(){$('bookGrid').replaceChildren();updateThemeLabels();pool()
 setInterval(()=>{let now=performance.now(),elapsed=Math.max(0,Math.min(1.5,(now-gameTick)/1000));gameTick=now;if(screen==='game'&&gameRunning&&!document.hidden&&tabOwner&&remaining()>0){state.usage[localDay()]=(state.usage[localDay()]||0)+elapsed;save();if(remaining()<=0){openScreen('home');alert('Bugünkü 20 dakika tamamlandı!')}}topUI()},1000);document.addEventListener('visibilitychange',()=>{gameTick=performance.now()});window.addEventListener('pagehide',save);topUI();
 
 // V10 maskot tercihi: mevcut oyun/ilerleme kaydıyla aynı localStorage nesnesinde.
-const WOW_STUDENT_KEY='wow3_student_name_locked_v1';
+const WOW_STUDENT_KEY='wow2_student_name_locked_v1';
 const WOW_AVATARS=['🦉','🐼','🦊','🐱','🐰','🐸','🐻','🦁'];
 function renderAvatar(){
  const selected=WOW_AVATARS.includes(state.avatar)?state.avatar:'🦉';
  $('avatarWide').textContent=selected;$('avatarPortrait').textContent=selected;const visibleAvatar=$('wowSelectedAvatar');if(visibleAvatar)visibleAvatar.textContent=selected;
- document.querySelectorAll('.student-name').forEach(el=>el.textContent=studentName()||'Öğrenci');$('settingsStudentName').textContent=studentName()||'—';$('gradeWide').textContent='3. Sınıf';$('gradePortrait').textContent='3. Sınıf';
+ document.querySelectorAll('.student-name').forEach(el=>el.textContent=studentName()||'Öğrenci');$('settingsStudentName').textContent=studentName()||'—';$('gradeWide').textContent='2. Sınıf';$('gradePortrait').textContent='2. Sınıf';
  const container=$('avatarChoices');container.replaceChildren();
  WOW_AVATARS.forEach((a,i)=>{const b=document.createElement('button');b.className='avatar-option'+(selected===a?' selected':'');b.type='button';b.textContent=a;b.setAttribute('aria-label','Maskot '+(i+1));b.setAttribute('aria-pressed',String(selected===a));b.onclick=()=>{state.avatar=a;save();renderAvatar()};container.append(b)})
 }
@@ -385,7 +425,7 @@ function previousSwipe(){if(Date.now()-swShown<3000)return;const s=swState();if(
  const avatar=document.createElement('span');avatar.id='wowSelectedAvatar';avatar.className='wow-selected-avatar';
  const profileText=document.createElement('span');profileText.className='wow-profile-text';
  const name=document.createElement('span');name.className='wow-student-name student-name';
- const grade=document.createElement('span');grade.className='wow-grade';grade.textContent='⭐ 3. Sınıf';
+ const grade=document.createElement('span');grade.className='wow-grade';grade.textContent='⭐ 2. Sınıf';
  profileText.append(name,grade);profile.append(avatar,profileText);
  const themeButton=document.createElement('button');themeButton.type='button';themeButton.className='wow-dynamic-theme';themeButton.setAttribute('aria-label','Tema seçimi');themeButton.onclick=()=>openScreen('settings');
  const books=document.createElement('span');books.textContent='📚';
