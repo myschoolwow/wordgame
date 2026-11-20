@@ -232,21 +232,61 @@ function renderLetters(){
  tray.innerHTML='';d.letters.forEach(item=>{let used=d.picked.includes(item.id);let b=makeButton(tray,item.ch,()=>{if(answerLocked||used)return;d.picked.push(item.id);renderLetters()},'letter-tile');b.disabled=used});
 }
 // MOLE V9: gentler pace, 2.2 seconds visible, 15 seconds total.
+
 function drawMole(){
- q=rand(dailyWords());gameData={target:Math.floor(Math.random()*9),roundStarted:performance.now(),resolved:false,turn:0,sequence:[]};
- $('choices').className='choices mole-grid';$('gameEmoji').textContent='🐹';$('question').textContent=`${q[1]} kelimesini yakala!`;
- $('hint').textContent='Köstebekler 2,2 saniye görünür. Doğru İngilizce kelimeyi 15 saniye içinde yakala.';
- const wrong=shuffle(pool().filter(w=>w!==q)).slice(0,5);gameData.sequence=shuffle([q,q,q,...wrong]);
- const holes=Array.from({length:9},(_,i)=>makeButton($('choices'),'🕳️',()=>hitMole(i),'mole-hole'));
- function move(){if(!gameRunning||gameType!=='mole'||gameData.resolved)return;
-  const now=performance.now();if(now-gameData.roundStarted>=15000){finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0]);return}
-  const pos=gameData.target;
-  holes.forEach(h=>{h.textContent='🕳️';h.classList.remove('up');h.dataset.word=''});
-  const turn=gameData.turn++;const choice=gameData.sequence[turn%gameData.sequence.length];
-  holes[pos].textContent='🐹 '+choice[0];holes[pos].classList.add('up');holes[pos].dataset.word=choice[0];
-  gameData.target=(pos+1+Math.floor(Math.random()*8))%9;
-  later(move,2200);
+ q=rand(dailyWords());
+ gameData={target:Math.floor(Math.random()*9),roundStarted:performance.now(),resolved:false,turn:0,sequence:[]};
+
+ $('choices').className='choices mole-grid';
+ $('gameEmoji').textContent='🐹';
+ $('question').textContent=`${q[1]} kelimesini yakala!`;
+ $('hint').textContent='Üç kelime iki tur gösterilir. Doğru İngilizce kelimeyi 6 saniye içinde yakala.';
+
+ const wrong=shuffle(pool().filter(w=>w[0]!==q[0]));
+ const distinctWrong=[...new Map(wrong.map(w=>[w[0],w])).values()].slice(0,2);
+ if(distinctWrong.length<2){
+  $('feedback').textContent='Bu oyun için en az üç farklı kelime gerekiyor.';
+  later(nextQuestion,750);
+  return;
  }
+
+ const options=[q,...distinctWrong];
+ gameData.sequence=[...shuffle(options),...shuffle(options)];
+
+ const holes=Array.from({length:9},(_,i)=>
+  makeButton($('choices'),'🕳️',()=>hitMole(i),'mole-hole')
+ );
+
+ function move(){
+  if(!gameRunning||gameType!=='mole'||gameData.resolved)return;
+  if(gameData.turn>=6)return;
+
+  const pos=gameData.target;
+  holes.forEach(h=>{
+   h.textContent='🕳️';
+   h.classList.remove('up');
+   h.dataset.word='';
+  });
+
+  const choice=gameData.sequence[gameData.turn++];
+  holes[pos].textContent='🐹 '+choice[0];
+  holes[pos].classList.add('up');
+  holes[pos].dataset.word=choice[0];
+
+  gameData.target=(pos+1+Math.floor(Math.random()*8))%9;
+  if(gameData.turn<6)later(move,1000);
+ }
+
+ gameData.holes=holes;
+ gameData.correctWord=q[0];
+ move();
+
+ later(()=>{
+  if(!gameData.resolved)
+   finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0]);
+ },6000);
+}
+
  gameData.holes=holes;gameData.correctWord=q[0];move();later(()=>{if(!gameData.resolved)finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0])},15000);
 }
 function hitMole(i){
