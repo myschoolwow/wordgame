@@ -285,7 +285,7 @@ function drawMole(){
   if(!gameData.resolved)
    finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0]);
  },6000);
-}
+ }
 
  gameData.holes=holes;gameData.correctWord=q[0];move();later(()=>{if(!gameData.resolved)finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0])},15000);
 }
