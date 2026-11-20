@@ -385,7 +385,7 @@ function previousSwipe(){if(Date.now()-swShown<3000)return;const s=swState();if(
  const avatar=document.createElement('span');avatar.id='wowSelectedAvatar';avatar.className='wow-selected-avatar';
  const profileText=document.createElement('span');profileText.className='wow-profile-text';
  const name=document.createElement('span');name.className='wow-student-name student-name';
- const grade=document.createElement('span');grade.className='wow-grade';grade.textContent='⭐ 3. Sınıf';
+ const grade=document.createElement('span');grade.className='wow-grade';grade.textContent='⭐ 4. Sınıf';
  profileText.append(name,grade);profile.append(avatar,profileText);
  const themeButton=document.createElement('button');themeButton.type='button';themeButton.className='wow-dynamic-theme';themeButton.setAttribute('aria-label','Tema seçimi');themeButton.onclick=()=>openScreen('settings');
  const books=document.createElement('span');books.textContent='📚';
