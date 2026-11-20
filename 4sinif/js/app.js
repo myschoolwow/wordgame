@@ -8,7 +8,7 @@ function dayNum(s){return Math.floor(new Date(s+'T12:00:00').getTime()/86400000)
 function monday(s){const d=new Date(s+'T12:00:00'),wd=(d.getDay()+6)%7;d.setDate(d.getDate()-wd);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
 function weekId(){return monday(localDay())}
 const WORDS=window.WOW_THEME_1;
-const THEMES=Object.fromEntries([1,2,3,4,5,6].map(i=>[String(i),{name:["School Life", "Classroom Life", "Personal Life", "Family Life", "Homes & Houses & The Neighbourhood", "Life in the City & The World"][i-1],words:window['WOW_THEME_'+i]}]));
+const THEMES=Object.fromEntries([1,2,3,4,5,6].map(i=>[String(i),{name:["School Life", "Classroom Life", "Personal Life", "Family Life", "Homes, Houses & the Neighbourhood", "Life in the City & the World"][i-1],words:window['WOW_THEME_'+i]}]));
 function themeAvailable(id){const n=Number(id);return n<=2||(n>=3&&n<=6&&Boolean(medals()[String(n-1)]))}
 
 let state={},legacy={};
@@ -232,61 +232,21 @@ function renderLetters(){
  tray.innerHTML='';d.letters.forEach(item=>{let used=d.picked.includes(item.id);let b=makeButton(tray,item.ch,()=>{if(answerLocked||used)return;d.picked.push(item.id);renderLetters()},'letter-tile');b.disabled=used});
 }
 // MOLE V9: gentler pace, 2.2 seconds visible, 15 seconds total.
-
 function drawMole(){
- q=rand(dailyWords());
- gameData={target:Math.floor(Math.random()*9),roundStarted:performance.now(),resolved:false,turn:0,sequence:[]};
-
- $('choices').className='choices mole-grid';
- $('gameEmoji').textContent='🐹';
- $('question').textContent=`${q[1]} kelimesini yakala!`;
- $('hint').textContent='Üç kelime iki tur gösterilir. Doğru İngilizce kelimeyi 6 saniye içinde yakala.';
-
- const wrong=shuffle(pool().filter(w=>w[0]!==q[0]));
- const distinctWrong=[...new Map(wrong.map(w=>[w[0],w])).values()].slice(0,2);
- if(distinctWrong.length<2){
-  $('feedback').textContent='Bu oyun için en az üç farklı kelime gerekiyor.';
-  later(nextQuestion,750);
-  return;
- }
-
- const options=[q,...distinctWrong];
- gameData.sequence=[...shuffle(options),...shuffle(options)];
-
- const holes=Array.from({length:9},(_,i)=>
-  makeButton($('choices'),'🕳️',()=>hitMole(i),'mole-hole')
- );
-
- function move(){
-  if(!gameRunning||gameType!=='mole'||gameData.resolved)return;
-  if(gameData.turn>=6)return;
-
+ q=rand(dailyWords());gameData={target:Math.floor(Math.random()*9),roundStarted:performance.now(),resolved:false,turn:0,sequence:[]};
+ $('choices').className='choices mole-grid';$('gameEmoji').textContent='🐹';$('question').textContent=`${q[1]} kelimesini yakala!`;
+ $('hint').textContent='Köstebekler 2,2 saniye görünür. Doğru İngilizce kelimeyi 15 saniye içinde yakala.';
+ const wrong=shuffle(pool().filter(w=>w!==q)).slice(0,5);gameData.sequence=shuffle([q,q,q,...wrong]);
+ const holes=Array.from({length:9},(_,i)=>makeButton($('choices'),'🕳️',()=>hitMole(i),'mole-hole'));
+ function move(){if(!gameRunning||gameType!=='mole'||gameData.resolved)return;
+  const now=performance.now();if(now-gameData.roundStarted>=15000){finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0]);return}
   const pos=gameData.target;
-  holes.forEach(h=>{
-   h.textContent='🕳️';
-   h.classList.remove('up');
-   h.dataset.word='';
-  });
-
-  const choice=gameData.sequence[gameData.turn++];
-  holes[pos].textContent='🐹 '+choice[0];
-  holes[pos].classList.add('up');
-  holes[pos].dataset.word=choice[0];
-
+  holes.forEach(h=>{h.textContent='🕳️';h.classList.remove('up');h.dataset.word=''});
+  const turn=gameData.turn++;const choice=gameData.sequence[turn%gameData.sequence.length];
+  holes[pos].textContent='🐹 '+choice[0];holes[pos].classList.add('up');holes[pos].dataset.word=choice[0];
   gameData.target=(pos+1+Math.floor(Math.random()*8))%9;
-  if(gameData.turn<6)later(move,1000);
+  later(move,2200);
  }
-
- gameData.holes=holes;
- gameData.correctWord=q[0];
- move();
-
- later(()=>{
-  if(!gameData.resolved)
-   finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0]);
- },6000);
-}
-
  gameData.holes=holes;gameData.correctWord=q[0];move();later(()=>{if(!gameData.resolved)finishMole(false,'⏳ Süre doldu! Doğrusu: '+q[0])},15000);
 }
 function hitMole(i){
@@ -344,12 +304,12 @@ async function sharePuzzle(){
   x.fillText(studentName()||'Öğrenci',600,400,1100);x.restore();
   x.fillStyle='rgba(8,63,123,.92)';x.fillRect(0,0,1200,100);
   x.fillStyle='white';x.textAlign='center';x.font='bold 27px sans-serif';
-  x.fillText('MySchool WOW • 4. Sınıf',600,38,1160);
+  x.fillText('MySchool WOW • 3. Sınıf',600,38,1160);
   x.font='bold 26px sans-serif';x.fillText(themeName()+' • '+(week+1)+'. Hafta',600,76,1160);
   const blob=await puzzlePNG(c);
-  const filename=`MySchool_WOW_4_Sinif_Tema_${themeId()}_Hafta_${week+1}.png`;
+  const filename=`MySchool_WOW_3_Sinif_Tema_${themeId()}_Hafta_${week+1}.png`;
   const file=new File([blob],filename,{type:'image/png'});
-  const data={files:[file],title:'MySchool WOW — Başarım',text:`${studentName()||'Öğrenci'} • 4. Sınıf • ${themeName()} • ${week+1}. Hafta`};
+  const data={files:[file],title:'MySchool WOW — Başarım',text:`${studentName()||'Öğrenci'} • 3. Sınıf • ${themeName()} • ${week+1}. Hafta`};
   if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
    try{await navigator.share(data);return;}
    catch(err){if(err&&err.name==='AbortError')return;}
@@ -371,7 +331,7 @@ const WOW_AVATARS=['🦉','🐼','🦊','🐱','🐰','🐸','🐻','🦁'];
 function renderAvatar(){
  const selected=WOW_AVATARS.includes(state.avatar)?state.avatar:'🦉';
  $('avatarWide').textContent=selected;$('avatarPortrait').textContent=selected;const visibleAvatar=$('wowSelectedAvatar');if(visibleAvatar)visibleAvatar.textContent=selected;
- document.querySelectorAll('.student-name').forEach(el=>el.textContent=studentName()||'Öğrenci');$('settingsStudentName').textContent=studentName()||'—';$('gradeWide').textContent='4. Sınıf';$('gradePortrait').textContent='4. Sınıf';
+ document.querySelectorAll('.student-name').forEach(el=>el.textContent=studentName()||'Öğrenci');$('settingsStudentName').textContent=studentName()||'—';$('gradeWide').textContent='3. Sınıf';$('gradePortrait').textContent='3. Sınıf';
  const container=$('avatarChoices');container.replaceChildren();
  WOW_AVATARS.forEach((a,i)=>{const b=document.createElement('button');b.className='avatar-option'+(selected===a?' selected':'');b.type='button';b.textContent=a;b.setAttribute('aria-label','Maskot '+(i+1));b.setAttribute('aria-pressed',String(selected===a));b.onclick=()=>{state.avatar=a;save();renderAvatar()};container.append(b)})
 }
@@ -425,7 +385,7 @@ function previousSwipe(){if(Date.now()-swShown<3000)return;const s=swState();if(
  const avatar=document.createElement('span');avatar.id='wowSelectedAvatar';avatar.className='wow-selected-avatar';
  const profileText=document.createElement('span');profileText.className='wow-profile-text';
  const name=document.createElement('span');name.className='wow-student-name student-name';
- const grade=document.createElement('span');grade.className='wow-grade';grade.textContent='⭐ 4. Sınıf';
+ const grade=document.createElement('span');grade.className='wow-grade';grade.textContent='⭐ 3. Sınıf';
  profileText.append(name,grade);profile.append(avatar,profileText);
  const themeButton=document.createElement('button');themeButton.type='button';themeButton.className='wow-dynamic-theme';themeButton.setAttribute('aria-label','Tema seçimi');themeButton.onclick=()=>openScreen('settings');
  const books=document.createElement('span');books.textContent='📚';
