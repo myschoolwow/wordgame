@@ -1,0 +1,336 @@
+[
+  {
+    "file": "tema1/hafta1.webp",
+    "topic": "Hagia Sophia Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Hagia_Sophia_Mars_2013.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Hagia Sophia Mars 2013.jpg",
+    "original_size": [
+      5514,
+      3681
+    ],
+    "license": "CC BY-SA 3.0",
+    "author": "Arild Vågen",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema1/hafta2.webp",
+    "topic": "Sultan Ahmed Mosque Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Sultan_Ahmed_Mosque(Blue_Mosque),_Istanbul,_Turkey_(Ank_Kumar)_01.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/4/41/Sultan_Ahmed_Mosque%28Blue_Mosque%29%2C_Istanbul%2C_Turkey_%28Ank_Kumar%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Sultan Ahmed Mosque(Blue Mosque), Istanbul, Turkey (Ank Kumar) 01.jpg",
+    "original_size": [
+      6000,
+      4000
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Ank Kumar ",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema1/hafta3.webp",
+    "topic": "Suleymaniye Mosque Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Istanbul,_T%C3%BCrkiye_,_Suleymaniye_Mosque_(_Ank_Kumar,_Infosys_Limited_)_06.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Istanbul%2C_T%C3%BCrkiye_%2C_Suleymaniye_Mosque_%28_Ank_Kumar%2C_Infosys_Limited_%29_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Istanbul, Türkiye , Suleymaniye Mosque ( Ank Kumar, Infosys Limited ) 06.jpg",
+    "original_size": [
+      6000,
+      4000
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Ank Kumar ",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema1/hafta4.webp",
+    "topic": "Basilica Cistern Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Medusa_Head_at_Basilica_Cistern,_Istanbul,_Turkey_(Ank_Kumar)_06.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/3/34/Medusa_Head_at_Basilica_Cistern%2C_Istanbul%2C_Turkey_%28Ank_Kumar%29_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Medusa Head at Basilica Cistern, Istanbul, Turkey (Ank Kumar) 06.jpg",
+    "original_size": [
+      6000,
+      4000
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Ank Kumar",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema2/hafta1.webp",
+    "topic": "Topkapi Palace Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Roof-Topkapi-Palace-Museum.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Roof-Topkapi-Palace-Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Roof-Topkapi-Palace-Museum.jpg",
+    "original_size": [
+      3400,
+      2600
+    ],
+    "license": "CC BY 4.0",
+    "author": "Acediscovery",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema2/hafta2.webp",
+    "topic": "Dolmabahce Palace Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Dolmabahce_Mosque,_Dolmabahce_Palace_and_the_Bosphorus_Bridge_in_Istanbul.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/7/74/Dolmabahce_Mosque%2C_Dolmabahce_Palace_and_the_Bosphorus_Bridge_in_Istanbul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Dolmabahce Mosque, Dolmabahce Palace and the Bosphorus Bridge in Istanbul.jpg",
+    "original_size": [
+      6016,
+      3086
+    ],
+    "license": "CC BY 3.0",
+    "author": "ArildV",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema2/hafta3.webp",
+    "topic": "Galata Tower Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Istanbul_panorama_from_Galata_tower_-_1.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/3/39/Istanbul_panorama_from_Galata_tower_-_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Istanbul panorama from Galata tower - 1.jpg",
+    "original_size": [
+      8334,
+      3798
+    ],
+    "license": "CC0",
+    "author": "Ilya saffarian Tousi",
+    "attribution_required": "false"
+  },
+  {
+    "file": "tema2/hafta4.webp",
+    "topic": "Maiden Tower Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:K%C4%B1z_Kulesi,_Maiden%27s_Tower_(52396632086).jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/f/f8/K%C4%B1z_Kulesi%2C_Maiden%27s_Tower_%2852396632086%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Kız Kulesi, Maiden's Tower (52396632086).jpg",
+    "original_size": [
+      5299,
+      3356
+    ],
+    "license": "CC BY 2.0",
+    "author": "Sonse",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema3/hafta1.webp",
+    "topic": "Ortakoy Mosque Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Ortak%C3%B6y_Mosque_or_B%C3%BCy%C3%BCk_Mecidiye_Camii_(Grand_Imperial_Mosque_of_Sultan_Abd%C3%BClmecid)_in_Be%C5%9Fikta%C5%9F,_Istanbul,_T%C3%BCrkiye_(Ank_Kumar,_Infosys_Limited)_02.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/d/db/Ortak%C3%B6y_Mosque_or_B%C3%BCy%C3%BCk_Mecidiye_Camii_%28Grand_Imperial_Mosque_of_Sultan_Abd%C3%BClmecid%29_in_Be%C5%9Fikta%C5%9F%2C_Istanbul%2C_T%C3%BCrkiye_%28Ank_Kumar%2C_Infosys_Limited%29_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Ortaköy Mosque or Büyük Mecidiye Camii (Grand Imperial Mosque of Sultan Abdülmecid) in Beşiktaş, Istanbul, Türkiye (Ank Kumar, Infosys Limited) 02.jpg",
+    "original_size": [
+      6000,
+      4000
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Ank Kumar ",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema3/hafta3.webp",
+    "topic": "Rumeli Hisari Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Rumeli_hisari_-_panoramio_(1).jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Rumeli_hisari_-_panoramio_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Rumeli hisari - panoramio (1).jpg",
+    "original_size": [
+      4224,
+      3168
+    ],
+    "license": "CC BY-SA 3.0",
+    "author": "Akrep Scorpion",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema4/hafta1.webp",
+    "topic": "Balat Istanbul colorful houses",
+    "source": "https://commons.wikimedia.org/wiki/File:Balat_houses.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/1/15/Balat_houses.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Balat houses.jpg",
+    "original_size": [
+      4032,
+      3024
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Antoloji",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema4/hafta2.webp",
+    "topic": "Istiklal Avenue Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:%C4%B0stiklal_Avenue_-_Istiklal_Street_-_%C4%B0stikl%C3%A2l_Caddesi_-_Istanbul,_Turkey_(10583233815).jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/6/62/%C4%B0stiklal_Avenue_-_Istiklal_Street_-_%C4%B0stikl%C3%A2l_Caddesi_-_Istanbul%2C_Turkey_%2810583233815%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:İstiklal Avenue - Istiklal Street - İstiklâl Caddesi - Istanbul, Turkey (10583233815).jpg",
+    "original_size": [
+      4000,
+      3000
+    ],
+    "license": "CC BY 2.0",
+    "author": "David Berkowitz from New York, NY, USA",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema4/hafta3.webp",
+    "topic": "Istanbul nostalgic tram",
+    "source": "https://commons.wikimedia.org/wiki/File:Nostalgic_%C4%B0stiklal_Caddesi_Tram_(52556940139).jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/9/90/Nostalgic_%C4%B0stiklal_Caddesi_Tram_%2852556940139%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Nostalgic İstiklal Caddesi Tram (52556940139).jpg",
+    "original_size": [
+      7952,
+      5304
+    ],
+    "license": "CC BY 2.0",
+    "author": "Nan Palmero from San Antonio, TX, USA",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema4/hafta4.webp",
+    "topic": "Grand Bazaar Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Roof_of_the_qom_grand_bazaar,_qom,_iran.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/3/39/Roof_of_the_qom_grand_bazaar%2C_qom%2C_iran.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Roof of the qom grand bazaar, qom, iran.jpg",
+    "original_size": [
+      11987,
+      7492
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Amir Pashaei",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema5/hafta1.webp",
+    "topic": "Princes Islands Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_the_Princes%27_Islands,_Yalova_and_Uluda%C4%9F_from_Kocamustafapa%C5%9Fa,_Fatih,_Istanbul.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/0/09/View_of_the_Princes%27_Islands%2C_Yalova_and_Uluda%C4%9F_from_Kocamustafapa%C5%9Fa%2C_Fatih%2C_Istanbul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:View of the Princes' Islands, Yalova and Uludağ from Kocamustafapaşa, Fatih, Istanbul.jpg",
+    "original_size": [
+      4000,
+      3000
+    ],
+    "license": "CC BY-SA 3.0",
+    "author": "Sezenkerem",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema5/hafta2.webp",
+    "topic": "Emirgan Park Istanbul tulips",
+    "source": "https://commons.wikimedia.org/wiki/File:Tulip_Festival_Emirgan_2018.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/0/02/Tulip_Festival_Emirgan_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Tulip Festival Emirgan 2018.jpg",
+    "original_size": [
+      4128,
+      3096
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Husain007",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema5/hafta3.webp",
+    "topic": "Golden Horn Istanbul panorama",
+    "source": "https://commons.wikimedia.org/wiki/File:Panorama_from_Kadik%C3%B6y_Iskelesi_-_2014.10.23_(4).JPG",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Panorama_from_Kadik%C3%B6y_Iskelesi_-_2014.10.23_%284%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Panorama from Kadiköy Iskelesi - 2014.10.23 (4).JPG",
+    "original_size": [
+      4320,
+      3240
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Derzsi Elekes Andor",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema5/hafta4.webp",
+    "topic": "Pierre Loti Istanbul view",
+    "source": "https://commons.wikimedia.org/wiki/File:View_from_Pierre_Loti_Hill_9.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/8/8e/View_from_Pierre_Loti_Hill_9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:View from Pierre Loti Hill 9.jpg",
+    "original_size": [
+      5472,
+      3648
+    ],
+    "license": "CC BY 4.0",
+    "author": "Joseolgon",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema6/hafta1.webp",
+    "topic": "Galata Tower Istanbul night",
+    "source": "https://commons.wikimedia.org/wiki/File:Galata_Tower_-_panoramio_(3).jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Galata_Tower_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Galata Tower - panoramio (3).jpg",
+    "original_size": [
+      4608,
+      3456
+    ],
+    "license": "CC BY 3.0",
+    "author": "qwesy qwesy",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema6/hafta2.webp",
+    "topic": "Bosphorus Bridge night Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Bosphorus_Bridge_at_night.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/8/84/Bosphorus_Bridge_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Bosphorus Bridge at night.jpg",
+    "original_size": [
+      5760,
+      3840
+    ],
+    "license": "CC BY 2.0",
+    "author": "Andrey Filippov 安德烈",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema6/hafta3.webp",
+    "topic": "Ortakoy Mosque night Istanbul",
+    "source": "https://commons.wikimedia.org/wiki/File:Ortakoymosquenight.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Ortakoymosquenight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Ortakoymosquenight.jpg",
+    "original_size": [
+      4272,
+      2848
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Thatdarkduck",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema6/hafta4.webp",
+    "topic": "Istanbul skyline night",
+    "source": "https://commons.wikimedia.org/wiki/File:Istanbul-skyline-night-reflection.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Istanbul-skyline-night-reflection.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Istanbul-skyline-night-reflection.jpg",
+    "original_size": [
+      4032,
+      3024
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "SeablueTravelOfficial",
+    "attribution_required": "true"
+  },
+  {
+    "file": "tema3/hafta2.webp",
+    "topic": "15 July Martyrs Bridge Istanbul Bosphorus",
+    "source": "https://commons.wikimedia.org/wiki/File:The_first_Bosphorus_Bridge_(1973)_in_Istanbul.jpg",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/8/89/The_first_Bosphorus_Bridge_%281973%29_in_Istanbul.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:The first Bosphorus Bridge (1973) in Istanbul.jpg",
+    "original_size": [
+      7203,
+      5504
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Huseyinakbas63"
+  },
+  {
+    "file": "tema3/hafta4.webp",
+    "topic": "Istanbul vapur Bosphorus",
+    "source": "https://commons.wikimedia.org/wiki/File:Istanbul_vapur.JPG",
+    "original": "https://upload.wikimedia.org/wikipedia/commons/2/20/Istanbul_vapur.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+    "title": "File:Istanbul vapur.JPG",
+    "original_size": [
+      3072,
+      2304
+    ],
+    "license": "CC BY-SA 4.0",
+    "author": "Vikiçizer"
+  }
+]

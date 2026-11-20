@@ -1,0 +1,3 @@
+Yenilenemeyenler: ['tema1/hafta3.webp', 'tema2/hafta1.webp', 'tema2/hafta3.webp', 'tema4/hafta2.webp', 'tema5/hafta1.webp', 'tema5/hafta3.webp']
+Eksik dosyalar: []
+Görselleri önizlemeden görsel olarak doğrulayın.
