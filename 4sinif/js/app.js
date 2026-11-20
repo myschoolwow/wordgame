@@ -331,7 +331,7 @@ const WOW_AVATARS=['🦉','🐼','🦊','🐱','🐰','🐸','🐻','🦁'];
 function renderAvatar(){
  const selected=WOW_AVATARS.includes(state.avatar)?state.avatar:'🦉';
  $('avatarWide').textContent=selected;$('avatarPortrait').textContent=selected;const visibleAvatar=$('wowSelectedAvatar');if(visibleAvatar)visibleAvatar.textContent=selected;
- document.querySelectorAll('.student-name').forEach(el=>el.textContent=studentName()||'Öğrenci');$('settingsStudentName').textContent=studentName()||'—';$('gradeWide').textContent='4. Sınıf';$('gradePortrait').textContent='3. Sınıf';
+ document.querySelectorAll('.student-name').forEach(el=>el.textContent=studentName()||'Öğrenci');$('settingsStudentName').textContent=studentName()||'—';$('gradeWide').textContent='4. Sınıf';$('gradePortrait').textContent='4. Sınıf';
  const container=$('avatarChoices');container.replaceChildren();
  WOW_AVATARS.forEach((a,i)=>{const b=document.createElement('button');b.className='avatar-option'+(selected===a?' selected':'');b.type='button';b.textContent=a;b.setAttribute('aria-label','Maskot '+(i+1));b.setAttribute('aria-pressed',String(selected===a));b.onclick=()=>{state.avatar=a;save();renderAvatar()};container.append(b)})
 }
