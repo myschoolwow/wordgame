@@ -489,15 +489,15 @@ body{background:#03091e!important}
 /* WOW6 - Dikey ekranda üst panelleri aşağı kaydır */
 @media (orientation: portrait) {
   #wowFlat[data-layout="portrait"] .wow-dynamic-profile {
-    top: 16% !important;
+    top: 15% !important;
   }
 
   #wowFlat[data-layout="portrait"] .wow-dynamic-theme {
-    top: 16% !important;
+    top: 15% !important;
   }
 
   #wowFlat[data-layout="portrait"] .wow-dynamic-clock {
-    top: 23% !important;
+    top: 24% !important;
   }
 }
 
