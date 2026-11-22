@@ -336,7 +336,7 @@ async function sharePuzzle(){
   const blob=await puzzlePNG(c);
   const filename=`MySchool_WOW_5_Sinif_Tema_${themeId()}_Hafta_${week+1}.png`;
   const file=new File([blob],filename,{type:'image/png'});
-  const data={files:[file],title:'MySchool WOW — Başarım',text:`${studentName()||'Öğrenci'} • 6. Sınıf • ${themeName()} • ${week+1}. Hafta`};
+  const data={files:[file],title:'MySchool WOW — Başarım',text:`${studentName()||'Öğrenci'} • 7. Sınıf • ${themeName()} • ${week+1}. Hafta`};
   if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){
    try{await navigator.share(data);return;}
    catch(err){if(err&&err.name==='AbortError')return;}
@@ -358,7 +358,7 @@ const WOW_AVATARS=['🦉','🐼','🦊','🐱','🐰','🐸','🐻','🦁'];
 function renderAvatar(){
  const selected=WOW_AVATARS.includes(state.avatar)?state.avatar:'🦉';
  $('avatarWide').textContent=selected;$('avatarPortrait').textContent=selected;const visibleAvatar=$('wowSelectedAvatar');if(visibleAvatar)visibleAvatar.textContent=selected;
- document.querySelectorAll('.student-name').forEach(el=>el.textContent=studentName()||'Öğrenci');$('settingsStudentName').textContent=studentName()||'—';$('gradeWide').textContent='6. Sınıf';$('gradePortrait').textContent='6. Sınıf';
+ document.querySelectorAll('.student-name').forEach(el=>el.textContent=studentName()||'Öğrenci');$('settingsStudentName').textContent=studentName()||'—';$('gradeWide').textContent='7. Sınıf';$('gradePortrait').textContent='7. Sınıf';
  const container=$('avatarChoices');container.replaceChildren();
  WOW_AVATARS.forEach((a,i)=>{const b=document.createElement('button');b.className='avatar-option'+(selected===a?' selected':'');b.type='button';b.textContent=a;b.setAttribute('aria-label','Maskot '+(i+1));b.setAttribute('aria-pressed',String(selected===a));b.onclick=()=>{state.avatar=a;save();renderAvatar()};container.append(b)})
 }
@@ -412,7 +412,7 @@ function previousSwipe(){if(Date.now()-swShown<3000)return;const s=swState();if(
  const avatar=document.createElement('span');avatar.id='wowSelectedAvatar';avatar.className='wow-selected-avatar';
  const profileText=document.createElement('span');profileText.className='wow-profile-text';
  const name=document.createElement('span');name.className='wow-student-name student-name';
- const grade=document.createElement('span');grade.className='wow-grade';grade.textContent='⭐ 6. Sınıf';
+ const grade=document.createElement('span');grade.className='wow-grade';grade.textContent='⭐ 7. Sınıf';
  profileText.append(name,grade);profile.append(avatar,profileText);
  const themeButton=document.createElement('button');themeButton.type='button';themeButton.className='wow-dynamic-theme';themeButton.setAttribute('aria-label','Tema seçimi');themeButton.onclick=()=>openScreen('settings');
  const books=document.createElement('span');books.textContent='📚';
