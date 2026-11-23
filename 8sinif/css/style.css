@@ -500,3 +500,19 @@ body{background:#03091e!important}
 #wowFlat .wow-hit-layout button[aria-label="Ayarlar"] .settings-label{display:block!important;white-space:nowrap!important}
 #wowFlat[data-layout="portrait"] .wow-hit-layout button[aria-label="Ayarlar"]{flex-direction:column!important;gap:0!important;padding:3% 1%!important;font-size:clamp(9px,2.45vw,21px)!important}
 #wowFlat[data-layout="portrait"] .wow-hit-layout button[aria-label="Ayarlar"] .settings-gear{width:32%!important;height:43%!important}
+
+
+/* WOW6 - Dikey ekranda üst panelleri aşağı kaydır */
+@media (orientation: portrait) {
+  #wowFlat[data-layout="portrait"] .wow-dynamic-profile {
+    top: 15% !important;
+  }
+
+  #wowFlat[data-layout="portrait"] .wow-dynamic-theme {
+    top: 15% !important;
+  }
+
+  #wowFlat[data-layout="portrait"] .wow-dynamic-clock {
+    top: 24% !important;
+  }
+}
