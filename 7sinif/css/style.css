@@ -484,3 +484,19 @@ body{background:#03091e!important}
 #game .connect-word.matched,#game #connectRight .connect-word.matched{background:#155747!important;color:#ffffff!important;border-color:#76f0c3!important}
 #game .pill{background:#132d62!important;color:#f3faff!important;border:1px solid #5bcaff!important}
 #game button:focus-visible{outline:3px solid #fff18b!important;outline-offset:3px}
+
+
+/* WOW6 - Dikey ekranda üst panelleri aşağı kaydır */
+@media (orientation: portrait) {
+  #wowFlat[data-layout="portrait"] .wow-dynamic-profile {
+    top: 15% !important;
+  }
+
+  #wowFlat[data-layout="portrait"] .wow-dynamic-theme {
+    top: 15% !important;
+  }
+
+  #wowFlat[data-layout="portrait"] .wow-dynamic-clock {
+    top: 24% !important;
+  }
+}
