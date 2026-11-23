@@ -1,0 +1,9 @@
+WOO Olympics Pre A1 V3
+- Ana ekrandaki fazladan küçük logo kaldırıldı.
+- Yatay ana ekran görseli sağ üst kontrol ikonları olmadan yenilendi.
+- Dikey görselde sağ üstteki çizilmiş kontrol ikonları arka plan yamasıyla örtüldü.
+- Oyunların tamamında olimpiyat arka planı yarı saydam panelin arkasında görünür.
+- Köstebek oyunu: 6 delikli, her 1.25 saniyede tek köstebeğin yükseldiği/vurulabildiği oyun alanı; 10 saniye sayaç, gizlenmede duraklatma.
+- Başarılı cevaplarda Web Audio ile kısa, orijinal olumlu melodi geri getirildi.
+- Önceki 20 soruluk tur, rastgele öğrenme ve yerel ilerleme mantığı korundu.
+Not: Chromium tarayıcı otomasyonu ortam güvenlik politikası nedeniyle çalıştırılamadı. Gerçek cihaz testi henüz yapılmadı.

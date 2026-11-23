@@ -1,0 +1,14 @@
+WOO Olympics Pre A1 — V2 (23.11.2026)
+
+- Ana ekran, kullanıcı tarafından onaylanan yatay ve dikey görsellerin aynısıdır. Butonların üzerinde görünmez, erişilebilir tıklama bölgeleri vardır.
+- WOO Pre A1 özel logosu ana ekran köşesinde ve PWA simgesinde korunur.
+- Normal dört oyunun her biri 20 farklı hedef kelimelik tur kullanır. Eşleştirme oyununda her hedef kelime için dört çift gösterilir.
+- Kelime Öğren, 495 kelimeyi kalıcı karıştırılmış sıra ile gösterir. Tüm liste tamamlanınca yeniden karıştırılır.
+- Anagramda dokunarak harf seçme, geri alma ve kontrol etme vardır.
+- Köstebek 10 saniyelik soru zamanlayıcısıyla çalışır. Yeni soruya veya ana ekrana geçince eski sayaç iptal edilir. Sekme arka plana geçince oyun duraklatılır ve dönüşte o soruya 10 saniye yeniden verilir.
+- Tekrar quizinde mevcut tekrar listesi 20 kelimeden azsa yalnızca listedeki farklı kelimeler sorulur; yapay tekrar eklenmez.
+- Görülen kelime sayısı yalnızca dört normal oyunda sorulan farklı kelimelerle artar; Kelime Öğren ve tekrar quizi artırmaz.
+- %60 yeni / %30 çalışılan / %10 bilinen hedefleri, günlük kapsama açığını kapatacak biçimde uyarlanır.
+- PWA servis çalışanı önbelleği V2'ye yükseltildi.
+
+Not: Sözdizimi ve veri sayısı kontrol edildi; gerçek cihazlarda tam uçtan uca test henüz yapılmadı.
