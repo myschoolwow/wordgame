@@ -1,0 +1,8 @@
+WOO Olympics Pre A1 — V4
+- Köstebek Avı: Türkçe ipucundan doğru İngilizce kelimeyi yakalama; 6 delik, tek aktif köstebek, 2,2 sn görünme, 15 sn soru süresi.
+- Her altı çıkışlık döngüde doğru cevap mutlaka görünür; boş delik tıklaması yanıt sayılmaz.
+- Sekme arka plana geçince köstebek süresi durur, dönünce aynı sorudan devam eder.
+- Kelime Öğren: Kelime ekrana geldiğinde otomatik İngilizce TTS çağrısı; Tekrar Oku düğmesi korunur.
+- TTS için en-GB öncelikli, diğer İngilizce sesler yedek; ses hatasında kullanıcıya bilgi gösterilir.
+- Diğer oyunlar, kelime havuzları ve ilerleme verilerinin saklama anahtarı korunmuştur.
+Not: Tarayıcı otomasyonuna ortam erişim engeli olduğundan gerçek cihaz ses/oyun testi yapılmadı.
